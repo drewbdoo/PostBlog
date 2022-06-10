@@ -1,4 +1,4 @@
-package com.springBootCRUD.model;
-
-public class User {
-}
+//package com.springBootCRUD.model;
+//
+//public class User {
+//}

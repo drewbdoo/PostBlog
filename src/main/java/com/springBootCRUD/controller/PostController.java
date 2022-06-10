@@ -14,14 +14,11 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @Controller
+@SessionAttributes("post")
 public class PostController {
     @Autowired
     private PostService postService;
 
-    @GetMapping("/")
-    public String viewHomePage(Model model){
-        return findPaginated(1, "title", "asc", model);
-    }
 
     @GetMapping("/showNewPostForm")
     public String showNewPostForm(Model model){
@@ -51,23 +48,23 @@ public class PostController {
     }
 
 
-    @GetMapping("/page/{pageNo}")
-    public String findPaginated(@PathVariable(value = "pageNo")int pageNo,
-                                @RequestParam("sortField") String sortField,
-                                @RequestParam("sortDir") String sortDir,
-                                Model model){
-        int pageSize = 5;
-        Page<Post> page = postService.findPaginated(pageNo, pageSize, sortField, sortDir);
-        List<Post> listPosts = page.getContent();
-        model.addAttribute("currentPage", pageNo);
-        model.addAttribute("totalPages", page.getTotalPages());
-        model.addAttribute("totalItems", page.getTotalElements());
-
-        model.addAttribute("sortField", sortField);
-        model.addAttribute("sortDir", sortDir);
-        model.addAttribute("reverseSortDir", sortDir.equals("asc") ? "desc": "asc");
-
-        model.addAttribute("listPosts", listPosts);
-        return "index";
-    }
+//    @GetMapping("/page/{pageNo}")
+//    public String findPaginated(@PathVariable(value = "pageNo")int pageNo,
+//                                @RequestParam("sortField") String sortField,
+//                                @RequestParam("sortDir") String sortDir,
+//                                Model model){
+//        int pageSize = 5;
+//        Page<Post> page = postService.findPaginated(pageNo, pageSize, sortField, sortDir);
+//        List<Post> listPosts = page.getContent();
+//        model.addAttribute("currentPage", pageNo);
+//        model.addAttribute("totalPages", page.getTotalPages());
+//        model.addAttribute("totalItems", page.getTotalElements());
+//
+//        model.addAttribute("sortField", sortField);
+//        model.addAttribute("sortDir", sortDir);
+//        model.addAttribute("reverseSortDir", sortDir.equals("asc") ? "desc": "asc");
+//
+//        model.addAttribute("listPosts", listPosts);
+//        return "index";
+//    }
 }

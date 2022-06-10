@@ -1,4 +1,4 @@
-package com.springBootCRUD.service;
-
-public interface CommentService {
-}
+//package com.springBootCRUD.service;
+//
+//public interface CommentService {
+//}

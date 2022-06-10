@@ -1,4 +1,4 @@
-package com.springBootCRUD.model;
-
-public class Comment {
-}
+//package com.springBootCRUD.model;
+//
+//public class Comment {
+//}
