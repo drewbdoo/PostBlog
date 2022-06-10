@@ -17,7 +17,8 @@ public class Post {
     @Column(name="title")
     private String title;
 
-    @Column(name="body")
+//    @NotEmpty(message = "Write something for the love of Internet...")
+    @Column(name = "body", columnDefinition = "TEXT", nullable = false)
     private String body;
 
     @CreationTimestamp
@@ -57,4 +58,17 @@ public class Post {
         this.currentDate = currentDate;
     }
 
+    @Override
+    public String toString() {
+        return "Post{" +
+                "id=" + id +
+                ", title='" + title + '\'' +
+                ", body='" + body + '\'' +
+                ", creationDate=" + currentDate +
+//                ", comments=" + comments +
+//                ", comments=" + comments.stream().map(Comment::toString).collect(Collectors.joining(",")) +
+//                ", username=" + user.getUsername() +
+//                ", user=" + user + // this way it is making the inf loop
+                '}';
+    }
 }

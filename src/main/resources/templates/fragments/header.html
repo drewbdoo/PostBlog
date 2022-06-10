@@ -7,7 +7,14 @@
 </head>
 <body>
 <header th:fragment="header">
-    <div class="topnav">
+    <!-- Image and text -->
+    <nav class="navbar navbar-light bg-*">
+        <a class="navbar-brand" href="#">
+            <img src="/images/logoicon.svg" width="30" height="30" class="d-inline-block align-top" alt="">
+            Carolina FinTech
+        </a>
+    </nav>
+<!--    <div class="topnav">-->
 <!--        <a class="active" th:href="@{/}">Home</a>-->
 <!--        <span sec:authorize="hasRole('ROLE_USER')">-->
 <!--        <a class="left" th:href="@{/createNewPost}">New Post</a>-->
@@ -22,9 +29,11 @@
 <!--        <a class="right" th:href="@{/login}">Log In</a>-->
 <!--        <a class="right" th:href="@{/signup}">Sign Up</a>-->
 <!--        </span>-->
-    </div>
-    <div class="header">
-        <h2>WIN Testimonials</h2>
+<!--    </div>-->
+<!--    <div class="header">-->
+    <div class="container">
+        <h2 class="text-center">WIN Testimonials</h2>
+        <a th:href = "@{/showNewPostForm}" class="btn btn-primary btn-sm mb-3">Create New Post</a>
     </div>
 </header>
 
