@@ -16,8 +16,14 @@ public class Post {
     private long id;
     @Column(name="title")
     private String title;
+
     @Column(name="body")
     private String body;
+
+    @CreationTimestamp
+    @Temporal(TemporalType.TIMESTAMP)
+    @Column(name="date", nullable = false,updatable = false)
+    private Date currentDate;
 
     public long getId() {
         return id;
@@ -50,14 +56,5 @@ public class Post {
     public void setCurrentDate(Date currentDate) {
         this.currentDate = currentDate;
     }
-
-    @CreationTimestamp
-    @Temporal(TemporalType.TIMESTAMP)
-    @Column(name="date", nullable = false,updatable = false)
-    private Date currentDate;
-
-
-
-
 
 }
