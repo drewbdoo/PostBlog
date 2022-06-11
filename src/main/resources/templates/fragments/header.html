@@ -16,11 +16,12 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
                 <li class="nav-item ">
-                    <a class="nav-link" th:href="@{/showNewPostForm}">Create New Post</a>
+<!--                    Should only been seen if the user is already logged in-->
+                    <a class="nav-link" th:href="@{/showNewPostForm}">New Post</a>
                 </li>
                 <!--        This goes to the loginController-->
                 <li class="nav-item">
-                    <a class="nav-link" th:href="@{/login}">Login-In</a>
+                    <a class="nav-link" th:href="@{/login}">Login</a>
                 </li>
                 <li class="nav-item">
                     <!--        This goes to the signupController-->

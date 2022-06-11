@@ -11,7 +11,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+import java.security.Principal;
 import java.util.List;
+import java.util.Optional;
 
 @Controller
 @SessionAttributes("post")
@@ -45,6 +47,27 @@ public class PostController {
     public String deletePost(@PathVariable(value = "id") Long id){
         this.postService.deletePostById(id);
         return "redirect:/";
+    }
+
+//Forgot to add a proper Get Method, here is that now
+    @GetMapping("/post/{id}")
+    public String getPost(@PathVariable Long id, Model model) {
+ // get username of current logged in session user
+// String authUsername = SecurityContextHolder.getContext().getAuthentication().getName();
+// find post by id
+        Optional<Post> optionalPost = Optional.ofNullable(this.postService.getPostById(id));
+        // if post exist put it in model
+        if (optionalPost.isPresent()) {
+            Post post = optionalPost.get();
+            model.addAttribute("post", post);
+//            // Check if current logged in user is owner and let view template know to take according actions
+//            if (authUsername.equals(post.getUser().getUsername())) {
+//                model.addAttribute("isOwner", true);
+//            }
+            return "post";
+        } else {
+            return "404";
+        }
     }
 
 

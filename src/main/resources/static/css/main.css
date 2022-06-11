@@ -21,9 +21,22 @@ no-repeat center fixed;
 
 
 }
+/*.posts_wrapper {*/
+/*    !*display: flex;*!*/
+/*    !*align-content: center;*!*/
+/*    !*justify-content: flex-start;*!*/
+/*}*/
 
 
-
+.pwrapper p{
+    color: rebeccapurple;
+}
+.card{
+    color: white;
+}
+.card-title{
+    color: white;!important;
+}
 /* Header/Blog Title */
 .header {
     padding: 10px;
@@ -37,9 +50,7 @@ no-repeat center fixed;
 /*    margin: auto;*/
 /*}*/
 
-.posts_wrapper {
-    /*width: 100%;*/
-}
+
 
 /* Fake image */
 .img {
