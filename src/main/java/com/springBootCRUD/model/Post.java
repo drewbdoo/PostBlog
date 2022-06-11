@@ -18,6 +18,8 @@ public class Post {
     private String title;
 
 //    @NotEmpty(message = "Write something for the love of Internet...")
+
+    //Specifies the type of data field is to be TEXT
     @Column(name = "body", columnDefinition = "TEXT", nullable = false)
     private String body;
 
