@@ -1,48 +1,6 @@
-/* NAV Style */
-
-/* Add a black background color to the top navigation */
-
 ul {
     list-style: none;
 }
-
-
-/* Style the links inside the navigation bar */
-/*.topnav a {*/
-/*    float: left;*/
-/*    color: #FEBF10;*/
-/*    text-align: center;*/
-/*    padding: 14px 16px;*/
-/*    text-decoration: none;*/
-/*    font-size: 17px;*/
-/*}*/
-
-/* Change the color of links on hover */
-/*.topnav a:hover {*/
-/*    background-color: #ddd;*/
-/*    color: black;*/
-/*}*/
-
-/* Add a color to the active/current link */
-/*.topnav a.active {*/
-/*    background-color: #3A1027;*/
-/*    color: white;*/
-/*    float: left;*/
-/*}*/
-
-/*.topnav a.right {*/
-/*    float: right;*/
-/*}*/
-
-/*body {*/
-/*    font-family: Arial;*/
-/*    padding: 0;*/
-/*    !*background: #f1f1f1;*!*/
-/*    width: 80%;*/
-/*    margin: auto;*/
-/*    background-color: #FEBF10;*/
-
-/*}*/
 
 body {
     background: rgb(244,122,55);
@@ -58,7 +16,6 @@ body {
     padding: 0;
     text-rendering: optimizeLegibility;
     max-width: 1600px;
-    margin: 0 auto;
 }
 
 
@@ -137,10 +94,9 @@ form {
 /* Footer */
 footer {
     background: none;
-    padding: 20px;
+    /*padding: 20px;*/
     text-align: center;
-
-    margin-top: 20px;
+    /*margin-top: 20px;*/
 }
 
 .alert-red {
