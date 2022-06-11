@@ -3,8 +3,10 @@ ul {
 }
 
 body {
+
     background: rgb(244,122,55);
-    background: linear-gradient(324deg, rgba(244,122,55,1) 0%, rgba(254,191,16,0.5) 42%, rgba(217,26,95,0.25) 79%);
+    background: linear-gradient(324deg, rgba(244,122,55,1) 0%, rgba(254,191,16,0.5) 42%, rgba(217,26,95,0.25) 79%)
+no-repeat center fixed;
     color: #3A1026;
     cursor: default;
     font-family: ibm-plex-sans, sans-serif;
@@ -16,6 +18,8 @@ body {
     padding: 0;
     text-rendering: optimizeLegibility;
     max-width: 1600px;
+
+
 }
 
 
@@ -28,10 +32,10 @@ body {
     background: none;
 }
 
-.container {
-    /*width: 80%;*/
-    margin: auto;
-}
+/*.container {*/
+/*    !*width: 80%;*!*/
+/*    margin: auto;*/
+/*}*/
 
 .posts_wrapper {
     /*width: 100%;*/
@@ -93,9 +97,13 @@ form {
 
 /* Footer */
 footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
     background: none;
     /*padding: 20px;*/
     text-align: center;
+    margin-top: auto;
     /*margin-top: 20px;*/
 }
 
