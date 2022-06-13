@@ -1,4 +1,4 @@
-package com.springBootCRUD.controller;
+package main.java.com.springBootCRUD.controller;
 
 
 import com.springBootCRUD.model.Post;
@@ -10,12 +10,13 @@ import org.springframework.data.domain.Page;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.validation.BindingResult;
 
+import javax.validation.Valid;
 import java.util.List;
 
 @Controller
 public class PostController {
-    //Making a comment, small change for git test
     @Autowired
     private PostService postService;
 
@@ -32,9 +33,13 @@ public class PostController {
       }
 
       @PostMapping("/savePost")
-      public String savePost(@ModelAttribute("post") Post post){
-        postService.savePost(post);
-        return "redirect:/";
+      public String savePost(@Valid @ModelAttribute("post") Post post, BindingResult bindingResult, Model model){
+          if(bindingResult.hasErrors()){
+              return "new_post";
+          } else {
+              postService.savePost(post);
+              return "redirect:/";
+          }
       }
     @GetMapping("/showPostForUpdate/{id}")
     public String showPostForUpdate(@PathVariable(value = "id") long id, Model model){

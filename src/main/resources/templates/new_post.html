@@ -15,9 +15,14 @@
     <h2>Save New Post</h2>
 
     <form action="#" th:action="@{/savePost}" th:object="${post}" method="post">
-        <input type="text" th:field = "*{title}" placeholder="Post Title" class="form-control mb-4 col-4">
-        <textarea th:field="*{body}" placeholder="Write something valuable"></textarea>
-
+        <div>
+            <input type="text" th:field = "*{title}" placeholder="Post Title" class="form-control mb-4 col-4">
+            <div class="alert alert-warning" th:if="${#fields.hasErrors('title')}" th:errors="*{title}"></div>
+        </div>
+        <div>
+            <textarea th:field="*{body}" placeholder="Write something valuable"></textarea>
+            <div class="alert alert-warning" th:if="${#fields.hasErrors('body')}" th:errors="*{body}"></div>
+        </div>
         <button type="submit" class="btn btn-info col-2">Save Post</button>
     </form>
 

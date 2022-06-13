@@ -3,6 +3,7 @@ package com.springBootCRUD.model;
 import org.hibernate.annotations.CreationTimestamp;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotEmpty;
 import java.util.Date;
 
 @Entity
@@ -14,9 +15,12 @@ public class Post {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
+
+    @NotEmpty(message = "Please fill out title of the post.")
     @Column(name="title")
     private String title;
 
+    @NotEmpty(message = "Please fill out content of the post.")
     @Column(name="body")
     private String body;
 
