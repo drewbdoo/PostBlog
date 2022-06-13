@@ -32,8 +32,10 @@ public class PostController {
       }
 
       @PostMapping("/savePost")
+      //@Valid is added to trigger Bean Validator to check if the field conform with @NotEmpty
       public String savePost(@Valid @ModelAttribute("post") Post post, BindingResult bindingResult, Model model){
-          if(bindingResult.hasErrors()){
+        //If statement is included to catch error. If there is no error, the post is saved and the page will redirect.
+        if(bindingResult.hasErrors()){
               return "new_post";
           } else {
               postService.savePost(post);

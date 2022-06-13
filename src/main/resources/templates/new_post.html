@@ -11,10 +11,14 @@
     <form action="#" th:action="@{/savePost}" th:object="${post}" method="post">
         <div>
             <input type="text" th:field = "*{title}" placeholder="Post Title" class="form-control mb-4 col-4">
+            //Added for form validation. If there is any error or ${#fields.hasErrors('title')} evaluates to true,
+            //th:errors will flag users for message specifies in model class.
             <div class="alert alert-warning" th:if="${#fields.hasErrors('title')}" th:errors="*{title}"></div>
         </div>
         <div>
             <textarea th:field="*{body}" placeholder="Write something valuable"></textarea>
+            //Added for form validation. If there is any error or ${#fields.hasErrors('title')} evaluates to true,
+            //th:errors will flag users for message specifies in model class.
             <div class="alert alert-warning" th:if="${#fields.hasErrors('body')}" th:errors="*{body}"></div>
         </div>
         <button type="submit" class="btn btn-info col-2">Save Post</button>
