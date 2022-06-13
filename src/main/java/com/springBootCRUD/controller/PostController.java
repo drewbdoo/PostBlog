@@ -21,14 +21,12 @@ public class PostController {
     @Autowired
     private PostService postService;
 
-
     @GetMapping("/showNewPostForm")
     public String showNewPostForm(Model model){
         Post post = new Post();
         model.addAttribute("post", post);
         return "new_post";
       }
-
       @PostMapping("/savePost")
       public String savePost(@ModelAttribute("post") Post post){
         postService.savePost(post);
